@@ -23,15 +23,11 @@ class EntriesController < ApplicationController
   def create
     @entry = Entry.new(entry_params)
 
-    respond_to do |format|
       if @entry.save
-        format.html { redirect_to @entry, notice: "Entry was successfully created." }
-        format.json { render :show, status: :created, location: @entry }
+        flash.notice = "Entry Saved!"
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @entry.errors, status: :unprocessable_entity }
+        flash.alert = "Incomplete Entry!"
       end
-    end
   end
 
   # PATCH/PUT /entries/1 or /entries/1.json
