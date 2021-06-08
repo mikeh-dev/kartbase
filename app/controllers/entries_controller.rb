@@ -24,9 +24,11 @@ class EntriesController < ApplicationController
     @entry = Entry.new(entry_params)
 
       if @entry.save
-        flash.notice = "Entry Saved!"
+        flash.now[:notice] = "Entry Saved!"
+        render 'show'
       else
-        flash.alert = "Incomplete Entry!"
+        flash.now[:alert] = "Incomplete Entry!"
+        render 'new'
       end
   end
 
@@ -60,6 +62,7 @@ class EntriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def entry_params
-      params.require(:entry).permit(:track, :date, :run)
+      params.require(:entry).permit(:track, :date, :run, :gearing, :prepressure, :postpressure, :needleclip, :jet, :frontwidth, :rearwidth, :bestlap)
+      
     end
 end

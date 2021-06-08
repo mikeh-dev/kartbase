@@ -1,5 +1,5 @@
 class Entry < ApplicationRecord
 
-  validates :track, :date, :run, presence: true
+  validates :track, :date, :run, :bestlap, presence: true
 
 end

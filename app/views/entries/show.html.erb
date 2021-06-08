@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<h3>Summary</h3>
+
 <p>
   <strong>Track:</strong>
   <%= @entry.track %>
@@ -15,5 +17,49 @@
   <%= @entry.run %>
 </p>
 
-<%= link_to 'Edit', edit_entry_path(@entry) %> |
-<%= link_to 'Back', entries_path %>
+<h3>Engine Setup</h3>
+
+<p>
+  <strong>Needle Clip:</strong>
+  <%= @entry.needleclip %>
+</p>
+
+<p>
+  <strong>Main Jet Size:</strong>
+  <%= @entry.jet %>
+</p>
+
+<p>
+  <strong>Gearing:</strong>
+  <%= @entry.gearing %>
+</p>
+
+<h3>Chassis Setup</h3>
+<p>
+  <strong>Rear Width: </strong>
+  <%= @entry.rearwidth %>
+  <strong>Front Width: </strong>
+  <%= @entry.frontwidth %>
+</p>
+
+<p>
+  <strong>Pre Session Pressure:</strong>
+  <%= @entry.prepressure %>
+  <strong>Post Session Pressure:</strong>
+  <%= @entry.postpressure %>
+</p>
+
+
+<h3>Session Results</h3>
+
+<h5>Top 3 Laps</h5>
+<p>
+  <%= @entry.bestlap %> Seconds
+  <%= @entry.secondbestlap %> Seconds
+  <%= @entry.thirdbestlap %> Seconds
+</p>
+
+
+<%= link_to 'Edit', edit_entry_path(@entry), class: "btn btn-info" %> |
+<%= link_to 'Back', entries_path, class: "btn btn-primary" %> |
+<%= link_to 'Delete', @entry, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>

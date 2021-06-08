@@ -11,22 +11,69 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :track %>
-    <%= form.text_field :track %>
+  <div class="card mb-2"> 
+    <div class="card-body">
+      <div class="field mb-3">
+        <%= form.label :track %>
+        <%= form.text_field :track, { class: "form-control", placeholder: "Track"} %>
+      </div>
+
+      <div class="field mb-3">
+        <%= form.label :date %>
+        <%= form.date_field :date, { class: "form-control"} %>
+      </div>
+
+      <div class="field mb-3">
+        <%= form.label :run %>
+        <%= form.number_field :run, { class: "form-control", placeholder: "Track"} %>
+      </div>
+
+       <div class="field mb-3">
+        <%= form.label :gearing %>
+        <%= form.number_field :gearing, { class: "form-control", placeholder: "Gearing"} %>
+      </div>
+
+       <div class="field mb-3">
+        <%= form.label :prepressure, "Pre Session Pressure" %>
+        <%= form.number_field :prepressure, { class: "form-control", placeholder: "Psi"} %>
+      </div>
+
+       <div class="field mb-3">
+        <%= form.label :postpressure, "End of Session Presure" %>
+        <%= form.number_field :postpressure, { class: "form-control", placeholder: "Psi"} %>
+      </div>
+
+       <div class="field mb-3">
+        <%= form.label :needleclip, "Carb Needle Clip" %>
+        <%= form.number_field :needleclip, { class: "form-control", placeholder: "Postion"} %>
+      </div>
+
+      <div class="field mb-3">
+        <%= form.label :jet, "Main Jet Size" %>
+        <%= form.number_field :jet, { class: "form-control", placeholder: "Size"} %>
+      </div>
+
+       <div class="field mb-3">
+        <%= form.label :frontwidth, "Front Track Width" %>
+        <%= form.number_field :frontwidth, { class: "form-control", placeholder: "Spacers on Inside"} %>
+      </div>
+
+       <div class="field mb-3">
+        <%= form.label :rearwidth, "Rear Track Width" %>
+        <%= form.number_field :rearwidth, { class: "form-control", placeholder: "Mm"} %>
+      </div>
+
+       <div class="field mb-3">
+        <%= form.label :bestlap, "Best Lap" %>
+        <%= form.number_field(:bestlap, step: 0.01) %>
+      </div>
+
+      <div class="actions mb-3">
+        <%= form.submit "Create Entry", class: "btn btn-primary" %>
+      </div>
+
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :date %>
-    <%= form.date_select :date %>
-  </div>
 
-  <div class="field">
-    <%= form.label :run %>
-    <%= form.number_field :run %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
