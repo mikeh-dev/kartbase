@@ -13,20 +13,26 @@
 
   <div class="card mb-2"> 
     <div class="card-body">
-      <div class="field mb-3">
-        <%= form.label :track %>
-        <%= form.text_field :track, { class: "form-control", placeholder: "Track"} %>
+      <div class="form-row">
+          <div class="form-group col-md-6">
+            <%= form.label :track %>
+            <%= form.text_field :track, { class: "form-control", placeholder: "Track"} %>
+          </div>
+          <div class="form-group col-md-6">
+            <%= form.label :date %>
+            <%= form.date_field :date, { class: "form-control"} %>
+          </div>
+          <div class="form-group col-md-6">
+            <%= form.label :run %>
+            <%= form.number_field :run, { class: "form-control", placeholder: "Track"} %>
+          </div>
+          <div class="form-group col-md-6">
+            <%= form.label :time %>
+            <%= form.time_field :time, { class: "form-control", placeholder: "Time"} %>
+          </div>
+        </div>
       </div>
-
-      <div class="field mb-3">
-        <%= form.label :date %>
-        <%= form.date_field :date, { class: "form-control"} %>
-      </div>
-
-      <div class="field mb-3">
-        <%= form.label :run %>
-        <%= form.number_field :run, { class: "form-control", placeholder: "Track"} %>
-      </div>
+    </div>
 
        <div class="field mb-3">
         <%= form.label :gearing %>
