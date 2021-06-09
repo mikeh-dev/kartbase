@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_09_125921) do
+ActiveRecord::Schema.define(version: 2021_06_09_213942) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,17 @@ ActiveRecord::Schema.define(version: 2021_06_09_125921) do
     t.string "frontbar"
     t.string "fuelload"
     t.string "fuelmix"
+    t.string "condition"
+    t.integer "chain"
+    t.string "axle"
+    t.integer "endweight"
+    t.integer "lapcount"
+    t.float "enginehour"
+    t.integer "tyreage"
+    t.integer "waddingage"
+    t.integer "gearoilage"
+    t.string "sessiontype"
+    t.string "mainchanges"
   end
 
 end

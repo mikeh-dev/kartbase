@@ -16,6 +16,14 @@
       <h3 class="custom-form-header">Session Summary</h3>
         <div class="form-row">
           <div class="form-group col-md-6">
+            <%= form.label :sessiontype, "Session Type" %>
+            <%= form.select :sessiontype, options_for_select(['Test', 'Qualifying', 'Heat 1', 'Heat 2', 'Final']),{}, { class: "form-control" } %>
+          </div>
+          <div class="form-group col-md-6">
+            <%= form.label :condition %>
+            <%= form.text_field :condtion, { class: "form-control", placeholder: "Weather Summary"} %>
+          </div>
+          <div class="form-group col-md-6">
             <%= form.label :track %>
             <%= form.text_field :track, { class: "form-control", placeholder: "Track"} %>
           </div>
@@ -31,23 +39,38 @@
             <%= form.label :time %>
             <%= form.time_field :time, { class: "form-control", placeholder: "Time"} %>
           </div>
+          <div class="form-group col-md-6">
+            <%= form.label :mainchanges, "Main Setup Changes" %>
+            <%= form.text_field :mainchanges, { class: "form-control", placeholder: "Summary"} %>
+          </div>
+          <div class="row">
+            <div class="col">
+              <%= form.label :endweight, "Weight After Session" %>
+              <%= form.number_field :endweight, { class: "form-control", placeholder: "Kg"} %>
+            </div>
+            <div class="col">
+              <%= form.label :enginehour, "Engine Hours" %>
+              <%= form.text_field :enginehour, { class: "form-control", placeholder: "Hours"} %>
+            </div>
+          
+          </div>
         </div>
 
          
 
       <div class="row">
         <div class="col">
-          <%= form.label :bestlap, "Best Lap" %>
-          <%= form.text_field :bestlap, { class: "form-control", placeholder: "Lap Time"} %>
+          <%= form.label :bestlap, "Best Lap Time" %>
+          <%= form.text_field :bestlap, { class: "form-control", placeholder: "Time"} %>
         </div>
         <div class="col">
           <%= form.label :secondbestlap, "Second Fastest Lap" %>
-          <%= form.text_field :secondbestlap, { class: "form-control", placeholder: "2nd Best Lap Time"} %>
+          <%= form.text_field :secondbestlap, { class: "form-control", placeholder: "Time"} %>
         </div>
   
         <div class="col">
           <%= form.label :thirdbestlap, "Third Fastest Lap" %>
-          <%= form.text_field :thirdbestlap, { class: "form-control", placeholder: "3rd Best Lap Time"} %>
+          <%= form.text_field :thirdbestlap, { class: "form-control", placeholder: "Time"} %>
         </div>
       </div>
 
@@ -74,29 +97,32 @@
       <h3 class="custom-form-header">Engine & Carb Setup</h3>
       <div class="row">
         <div class="col">
-          <%= form.label :needleclip, "Carb Needle Clip" %>
+          <%= form.label :needleclip, "Carb Needle" %>
           <%= form.number_field :needleclip, { class: "form-control", placeholder: "Postion"} %>
         </div>
 
         <div class="col">
-          <%= form.label :jet, "Main Jet Size" %>
+          <%= form.label :jet, "Main Jet" %>
           <%= form.number_field :jet, { class: "form-control", placeholder: "Size"} %>
         </div>
 
          <div class="col">
-          <%= form.label :plug, "Spark Plug Type" %>
+          <%= form.label :plug, "Spark Plug" %>
           <%= form.text_field :plug, { class: "form-control", placeholder: "Brand and Type"} %>
         </div>
+      </div>
 
-         <div class="col">
-          <%= form.label :idle, "Idle Screw" %>
+      <div class="row mt-3">
+        <div class="col">
+          <%= form.label :idle, "Idle" %>
           <%= form.text_field :idle, { class: "form-control", placeholder: "Number of Turns"} %>
         </div>
 
          <div class="col">
-          <%= form.label :airmix, "Air Mix Screw" %>
+          <%= form.label :airmix, "Air Mix" %>
           <%= form.text_field :airmix, { class: "form-control", placeholder: "Number of Turns"} %>
         </div>
+      
       </div>
 
       </div>
@@ -122,19 +148,88 @@
        <h3 class="custom-form-header">Chassis Setup</h3>
         <div class="row">
           <div class="col">
-            <%= form.label :frontwidth, "Front Track Width" %>
+            <%= form.label :frontwidth, "Front Width" %>
             <%= form.text_field :frontwidth, { class: "form-control", placeholder: "Spacers on Inside"} %>
           </div>
       
 
           <div class="col">
-            <%= form.label :rearwidth, "Rear Track Width" %>
+            <%= form.label :rearwidth, "Rear Width" %>
             <%= form.number_field :rearwidth, { class: "form-control", placeholder: "Mm"} %>
           </div>
 
           <div class="col">
             <%= form.label :gearing %>
             <%= form.number_field :gearing, { class: "form-control", placeholder: "Gearing"} %>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col">
+            <%= form.label :rimset, "Rims" %>
+            <%= form.text_field :rimset, { class: "form-control", placeholder: "Type and Number"} %>
+          </div>
+      
+
+          <div class="col">
+            <%= form.label :tyre, "Tyre Type" %>
+            <%= form.text_field :tyre, { class: "form-control", placeholder: "Brand"} %>
+          </div>
+
+          <div class="col">
+            <%= form.label :tyreset, "Tyre Set" %>
+            <%= form.text_field :tyreset, { class: "form-control", placeholder: "Number"} %>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col">
+            <%= form.label :caster, "Caster" %>
+            <%= form.text_field :caster, { class: "form-control", placeholder: ""} %>
+          </div>
+      
+
+          <div class="col">
+            <%= form.label :camber, "Camber" %>
+            <%= form.text_field :camber, { class: "form-control", placeholder: "Clicks"} %>
+          </div>
+
+          <div class="col">
+            <%= form.label :toe, "Toe" %>
+            <%= form.text_field :toe, { class: "form-control", placeholder: "Mm"} %>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col">
+            <%= form.label :frontbar, "Front Bar" %>
+            <%= form.text_field :frontbar, { class: "form-control", placeholder: ""} %>
+          </div>
+      
+
+          <div class="col">
+            <%= form.label :frontride, "Front Ride" %>
+            <%= form.text_field :frontride, { class: "form-control", placeholder: ""} %>
+          </div>
+
+          <div class="col">
+            <%= form.label :rearride, "Rear Ride" %>
+            <%= form.text_field :rearride, { class: "form-control", placeholder: ""} %>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col">
+            <%= form.label :chain, "Chain" %>
+            <%= form.text_field :chain, { class: "form-control", placeholder: ""} %>
+          </div>
+      
+
+          <div class="col">
+            <%= form.label :waddingage, "Wadding" %>
+            <%= form.text_field :waddingage, { class: "form-control", placeholder: "Age"} %>
+          </div>
+
+          <div class="col">
+            <%= form.label :gearoilage, "Gear Oil" %>
+            <%= form.text_field :gearoilage, { class: "form-control", placeholder: "Age"} %>
           </div>
         </div>
       </div>

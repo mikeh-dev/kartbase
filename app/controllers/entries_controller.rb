@@ -3,7 +3,7 @@ class EntriesController < ApplicationController
 
   # GET /entries or /entries.json
   def index
-    @entries = Entry.all
+    @entries = Entry.all.order(date: :asc)
   end
 
   # GET /entries/1 or /entries/1.json
@@ -14,6 +14,7 @@ class EntriesController < ApplicationController
   def new
     @entry = Entry.new
     @entry = Entry.last.dup
+    @entry.time = Time.now.strftime("%k:%M")
   end
 
   # GET /entries/1/edit
@@ -63,7 +64,7 @@ class EntriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def entry_params
-      params.require(:entry).permit(:track, :date, :time, :run, :gearing, :prepressure, :postpressure, :needleclip, :jet, :frontwidth, :rearwidth, :bestlap, :needleclip, :secondbestlap, :thirdbestlap, :airmix, :idle, :rimset, :tyre, :tyreset, :camber, :caster, :toe, :frontride, :rearride, :plug, :frontbar, :fuelload, :fuelmix)
+      params.require(:entry).permit(:track, :date, :time, :run, :gearing, :prepressure, :postpressure, :needleclip, :jet, :frontwidth, :rearwidth, :bestlap, :needleclip, :secondbestlap, :thirdbestlap, :airmix, :idle, :rimset, :tyre, :tyreset, :camber, :caster, :toe, :frontride, :rearride, :plug, :frontbar, :fuelload, :fuelmix, :sessiontype)
       
     end
 end
