@@ -21,7 +21,7 @@
           </div>
           <div class="form-group col-md-6">
             <%= form.label :condition %>
-            <%= form.text_field :condtion, { class: "form-control", placeholder: "Weather Summary"} %>
+            <%= form.text_field :condition, { class: "form-control", placeholder: "Weather Summary"} %>
           </div>
           <div class="form-group col-md-6">
             <%= form.label :track %>
@@ -46,7 +46,7 @@
           <div class="row">
             <div class="col">
               <%= form.label :endweight, "Weight After Session" %>
-              <%= form.number_field :endweight, { class: "form-control", placeholder: "Kg"} %>
+              <%= form.text_field :endweight, { class: "form-control", placeholder: "Kg"} %>
             </div>
             <div class="col">
               <%= form.label :enginehour, "Engine Hours" %>
@@ -168,8 +168,14 @@
             <%= form.label :rimset, "Rims" %>
             <%= form.text_field :rimset, { class: "form-control", placeholder: "Type and Number"} %>
           </div>
-      
 
+          <div class="col">
+            <%= form.label :axle, "Axle" %>
+            <%= form.text_field :axle, { class: "form-control", placeholder: "Type"} %>
+          </div>
+        </div>
+
+        <div class="row mt-3">
           <div class="col">
             <%= form.label :tyre, "Tyre Type" %>
             <%= form.text_field :tyre, { class: "form-control", placeholder: "Brand"} %>
@@ -179,7 +185,13 @@
             <%= form.label :tyreset, "Tyre Set" %>
             <%= form.text_field :tyreset, { class: "form-control", placeholder: "Number"} %>
           </div>
+
+          <div class="col">
+            <%= form.label :tyreage, "Tyre Age" %>
+            <%= form.text_field :tyreage, { class: "form-control", placeholder: "Laps"} %>
+          </div>
         </div>
+
         <div class="row mt-3">
           <div class="col">
             <%= form.label :caster, "Caster" %>

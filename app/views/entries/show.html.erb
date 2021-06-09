@@ -53,11 +53,20 @@
 <h3>Session Results</h3>
 
 <h5>Top 3 Laps</h5>
-<p>
-  <%= @entry.bestlap %> Seconds
-  <%= @entry.secondbestlap %> Seconds
-  <%= @entry.thirdbestlap %> Seconds
-</p>
+<div class="row">
+  <div class="col">
+    <%= @entry.bestlap %> Seconds
+  </div>
+  <div class="col">
+    <%= @entry.secondbestlap %> Seconds
+  </div>
+  <div class="col">
+    <%= @entry.thirdbestlap %> Seconds
+  </div>
+</div>
+
+
+
 
 
 <%= link_to 'Edit', edit_entry_path(@entry), class: "btn btn-info" %> |

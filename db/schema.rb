@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_09_213942) do
+ActiveRecord::Schema.define(version: 2021_06_09_220253) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2021_06_09_213942) do
     t.string "condition"
     t.integer "chain"
     t.string "axle"
-    t.integer "endweight"
+    t.float "endweight"
     t.integer "lapcount"
     t.float "enginehour"
     t.integer "tyreage"
