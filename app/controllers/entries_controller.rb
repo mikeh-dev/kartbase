@@ -13,6 +13,7 @@ class EntriesController < ApplicationController
   # GET /entries/new
   def new
     @entry = Entry.new
+    @entry = Entry.last.dup
   end
 
   # GET /entries/1/edit
