@@ -14,7 +14,7 @@
   <div class="card mb-2"> 
     <div class="card-body">
       <h3 class="custom-form-header">Session Summary</h3>
-      <div class="form-row">
+        <div class="form-row">
           <div class="form-group col-md-6">
             <%= form.label :track %>
             <%= form.text_field :track, { class: "form-control", placeholder: "Track"} %>
@@ -24,8 +24,8 @@
             <%= form.date_field :date, { class: "form-control"} %>
           </div>
           <div class="form-group col-md-6">
-            <%= form.label :run %>
-            <%= form.number_field :run, { class: "form-control", placeholder: "Track"} %>
+            <%= form.label :run, "Session" %>
+            <%= form.number_field :run, { class: "form-control", placeholder: "Session Number"} %>
           </div>
           <div class="form-group col-md-6">
             <%= form.label :time %>
@@ -51,7 +51,7 @@
         </div>
       </div>
 
-      <div class="row m-4 pb-3">
+      <div class="row m-4">
         <div class="col">
           <%= form.label :prepressure, "Pre Session Pressure" %>
           <%= form.number_field :prepressure, { class: "form-control", placeholder: "Psi"} %>
@@ -70,9 +70,9 @@
     
 
 
-    <h3 class="custom-form-header">Carb Setup</h3>
-    <div class="form-row">
-      <div class="form-group col-md-6">
+    <div class="form-group">
+      <h3 class="custom-form-header">Engine & Carb Setup</h3>
+      <div class="row">
         <div class="col">
           <%= form.label :needleclip, "Carb Needle Clip" %>
           <%= form.number_field :needleclip, { class: "form-control", placeholder: "Postion"} %>
@@ -82,46 +82,78 @@
           <%= form.label :jet, "Main Jet Size" %>
           <%= form.number_field :jet, { class: "form-control", placeholder: "Size"} %>
         </div>
+
+         <div class="col">
+          <%= form.label :plug, "Spark Plug Type" %>
+          <%= form.text_field :plug, { class: "form-control", placeholder: "Brand and Type"} %>
+        </div>
+
+         <div class="col">
+          <%= form.label :idle, "Idle Screw" %>
+          <%= form.text_field :idle, { class: "form-control", placeholder: "Number of Turns"} %>
+        </div>
+
+         <div class="col">
+          <%= form.label :airmix, "Air Mix Screw" %>
+          <%= form.text_field :airmix, { class: "form-control", placeholder: "Number of Turns"} %>
+        </div>
       </div>
-    </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <%= form.label :fuelload, "Fuel Load (litres)" %>
+          <%= form.number_field :fuelload, { class: "form-control", placeholder: "Litres"} %>
+        </div>
+
+        <div class="col">
+          <%= form.label :fuelmix, "Fuel Mix Ratio" %>
+          <%= form.text_field :fuelmix, { class: "form-control", placeholder: "Ratio"} %>
+        </div>
+      </div>
 
     
 
-    <h3 class="custom-form-header">Chassis Setup</h3>
-
-      <div class="form-row">
-        <%= form.label :frontwidth, "Front Track Width" %>
-        <%= form.text_field :frontwidth, { class: "form-control", placeholder: "Spacers on Inside"} %>
-      </div>
-
-       <div class="col">
-        <%= form.label :rearwidth, "Rear Track Width" %>
-        <%= form.number_field :rearwidth, { class: "form-control", placeholder: "Mm"} %>
-      </div>
-
-      <div class="">
-        <%= form.label :gearing %>
-        <%= form.number_field :gearing, { class: "form-control", placeholder: "Gearing"} %>
-      </div>
-
-       
-
      
 
+   
+      <div class="form-group mt-3">
+       <h3 class="custom-form-header">Chassis Setup</h3>
+        <div class="row">
+          <div class="col">
+            <%= form.label :frontwidth, "Front Track Width" %>
+            <%= form.text_field :frontwidth, { class: "form-control", placeholder: "Spacers on Inside"} %>
+          </div>
       
 
-       
+          <div class="col">
+            <%= form.label :rearwidth, "Rear Track Width" %>
+            <%= form.number_field :rearwidth, { class: "form-control", placeholder: "Mm"} %>
+          </div>
+
+          <div class="col">
+            <%= form.label :gearing %>
+            <%= form.number_field :gearing, { class: "form-control", placeholder: "Gearing"} %>
+          </div>
+        </div>
+      </div>
+
+      
 
       <div class="actions mb-3">
         <%= form.submit "Submit", class: "btn btn-success" %>
         <%= link_to 'Back', entries_path, class: "btn btn-primary" %>
       </div>
 
+
+
+
       </div>
     </div>
-
-    </div>
   </div>
+
+    
 
 
 <% end %>

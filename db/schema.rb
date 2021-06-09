@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_08_110108) do
+ActiveRecord::Schema.define(version: 2021_06_09_125921) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,7 +31,21 @@ ActiveRecord::Schema.define(version: 2021_06_08_110108) do
     t.float "bestlap"
     t.float "secondbestlap"
     t.float "thirdbestlap"
-    t.time "time"
+    t.time "time", default: -> { "CURRENT_TIMESTAMP" }
+    t.float "airmix"
+    t.float "idle"
+    t.string "rimset"
+    t.string "tyre"
+    t.string "tyreset"
+    t.string "camber"
+    t.string "caster"
+    t.string "toe"
+    t.string "frontride"
+    t.string "rearride"
+    t.string "plug"
+    t.string "frontbar"
+    t.string "fuelload"
+    t.string "fuelmix"
   end
 
 end
