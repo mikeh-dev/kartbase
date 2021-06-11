@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_09_220253) do
+ActiveRecord::Schema.define(version: 2021_06_11_230416) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2021_06_09_220253) do
     t.integer "gearoilage"
     t.string "sessiontype"
     t.string "mainchanges"
+    t.text "sessionnotes"
   end
 
 end

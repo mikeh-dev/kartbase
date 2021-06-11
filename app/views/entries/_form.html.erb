@@ -39,11 +39,18 @@
             <%= form.label :time %>
             <%= form.time_field :time, { class: "form-control", placeholder: "Time"} %>
           </div>
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-12">
             <%= form.label :mainchanges, "Main Setup Changes" %>
             <%= form.text_field :mainchanges, { class: "form-control", placeholder: "Summary"} %>
           </div>
-          <div class="row">
+          <div class="form-group col-md-12">
+            <%= form.label :sessionnotes, "Session Notes" %>
+            <%= form.text_area :sessionnotes, { class: "form-control", placeholder: "Summary"} %>
+          </div>
+         
+        </div>
+
+         <div class="row">
             <div class="col">
               <%= form.label :endweight, "Weight After Session" %>
               <%= form.text_field :endweight, { class: "form-control", placeholder: "Kg"} %>
@@ -52,9 +59,7 @@
               <%= form.label :enginehour, "Engine Hours" %>
               <%= form.text_field :enginehour, { class: "form-control", placeholder: "Hours"} %>
             </div>
-          
           </div>
-        </div>
 
          
 
