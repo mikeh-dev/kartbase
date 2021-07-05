@@ -89,5 +89,6 @@ class EntriesController < ApplicationController
       @entry.waddingage += 0.1
       @entry.gearoilage += 0.1
       @entry.tyreage += 13
+      @entry.endweight = nil
     end
 end

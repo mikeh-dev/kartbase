@@ -59,6 +59,10 @@
               <%= form.label :enginehour, "Engine Hours" %>
               <%= form.text_field :enginehour, { class: "form-control", placeholder: "Hours"} %>
             </div>
+            <div class="col">
+              <%= form.label :lapcount, "Laps Completed" %>
+              <%= form.number_field :lapcount, { class: "form-control", placeholder: "Laps"} %>
+            </div>
           </div>
 
          
@@ -111,7 +115,7 @@
         </div>
       </div>
 
-      <div class="row m-4">
+      <div class="row mt-3">
         <div class="col">
           <%= form.label :prepressure, "Pre Tyre Psi" %>
           <%= form.number_field :prepressure, { class: "form-control", placeholder: "Psi"} %>
@@ -123,9 +127,9 @@
         </div>
 
         <div class="col">
-            <%= form.label :rimset, "Rim Type" %>
-            <%= form.text_field :rimset, { class: "form-control", placeholder: "Type and Number"} %>
-          </div>
+            <%= form.label :rimset, "Rim" %>
+            <%= form.select :rimset, options_for_select(['MXJ 1', 'MXJ 2', 'MXJ 3', 'MXP 1', 'Wet 1', 'Wet 2', 'Wet 3']),{}, { class: "form-control" } %>
+        </div>
       </div>
 
       <div class="row mt-3">
