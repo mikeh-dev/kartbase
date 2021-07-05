@@ -79,17 +79,71 @@
         </div>
       </div>
 
+      <div class="row">
+        <div class="col">
+          <%= form.label :bestlaptoprevs, "Best Lap Top Revs" %>
+          <%= form.text_field :bestlaptoprevs, { class: "form-control", placeholder: "Rpm"} %>
+        </div>
+        <div class="col">
+          <%= form.label :secondbestlaptoprevs, "2nd Fastest Top Revs" %>
+          <%= form.text_field :secondbestlaptoprevs, { class: "form-control", placeholder: "Rpm"} %>
+        </div>
+  
+        <div class="col">
+          <%= form.label :thirdbestlaptoprevs, "3rd Fastest Top Revs" %>
+          <%= form.text_field :thirdbestlaptoprevs, { class: "form-control", placeholder: "Rpm"} %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <%= form.label :bestlapbottomrevs, "Best Lap Bottom Revs" %>
+          <%= form.text_field :bestlapbottomrevs, { class: "form-control", placeholder: "Rpm"} %>
+        </div>
+        <div class="col">
+          <%= form.label :secondbestlapbottomrevs, "2nd Fastest Bottom Revs" %>
+          <%= form.text_field :secondbestlapbottomrevs, { class: "form-control", placeholder: "Rpm"} %>
+        </div>
+  
+        <div class="col">
+          <%= form.label :thirdbestlapbottomrevs, "3rd Fastest Bottom Revs" %>
+          <%= form.text_field :thirdbestlapbottomrevs, { class: "form-control", placeholder: "Rpm"} %>
+        </div>
+      </div>
+
       <div class="row m-4">
         <div class="col">
-          <%= form.label :prepressure, "Pre Session Pressure" %>
+          <%= form.label :prepressure, "Pre Tyre Psi" %>
           <%= form.number_field :prepressure, { class: "form-control", placeholder: "Psi"} %>
         </div>
 
         <div class="col">
-          <%= form.label :postpressure, "End of Session Presure" %>
+          <%= form.label :postpressure, "End Tyre Psi" %>
           <%= form.number_field :postpressure, { class: "form-control", placeholder: "Psi"} %>
         </div>
+
+        <div class="col">
+            <%= form.label :rimset, "Rim Type" %>
+            <%= form.text_field :rimset, { class: "form-control", placeholder: "Type and Number"} %>
+          </div>
       </div>
+
+      <div class="row mt-3">
+          <div class="col">
+            <%= form.label :tyre, "Tyre Type" %>
+            <%= form.text_field :tyre, { class: "form-control", placeholder: "Brand"} %>
+          </div>
+
+          <div class="col">
+            <%= form.label :tyreset, "Tyre Set" %>
+            <%= form.text_field :tyreset, { class: "form-control", placeholder: "Number"} %>
+          </div>
+
+          <div class="col">
+            <%= form.label :tyreage, "Tyre Age" %>
+            <%= form.text_field :tyreage, { class: "form-control", placeholder: "Laps"} %>
+          </div>
+        </div>
 
        
         
@@ -116,6 +170,7 @@
           <%= form.text_field :plug, { class: "form-control", placeholder: "Brand and Type"} %>
         </div>
       </div>
+      
 
       <div class="row mt-3">
         <div class="col">
@@ -134,12 +189,17 @@
 
       <div class="row">
         <div class="col">
-          <%= form.label :fuelload, "Fuel Load (litres)" %>
-          <%= form.number_field :fuelload, { class: "form-control", placeholder: "Litres"} %>
+          <%= form.label :fuelload, "Pre Fuel" %>
+          <%= form.number_field :fuelload, { class: "form-control", placeholder: "Kg"} %>
         </div>
 
         <div class="col">
-          <%= form.label :fuelmix, "Fuel Mix Ratio" %>
+          <%= form.label :endfuel, "Post Fuel" %>
+          <%= form.number_field :endload, { class: "form-control", placeholder: "Kg"} %>
+        </div>
+
+        <div class="col">
+          <%= form.label :fuelmix, "Fuel Mix" %>
           <%= form.text_field :fuelmix, { class: "form-control", placeholder: "Ratio"} %>
         </div>
       </div>
@@ -169,10 +229,7 @@
           </div>
         </div>
         <div class="row mt-3">
-          <div class="col">
-            <%= form.label :rimset, "Rims" %>
-            <%= form.text_field :rimset, { class: "form-control", placeholder: "Type and Number"} %>
-          </div>
+          
 
           <div class="col">
             <%= form.label :axle, "Axle" %>
@@ -180,22 +237,7 @@
           </div>
         </div>
 
-        <div class="row mt-3">
-          <div class="col">
-            <%= form.label :tyre, "Tyre Type" %>
-            <%= form.text_field :tyre, { class: "form-control", placeholder: "Brand"} %>
-          </div>
-
-          <div class="col">
-            <%= form.label :tyreset, "Tyre Set" %>
-            <%= form.text_field :tyreset, { class: "form-control", placeholder: "Number"} %>
-          </div>
-
-          <div class="col">
-            <%= form.label :tyreage, "Tyre Age" %>
-            <%= form.text_field :tyreage, { class: "form-control", placeholder: "Laps"} %>
-          </div>
-        </div>
+        
 
         <div class="row mt-3">
           <div class="col">

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_11_230416) do
+ActiveRecord::Schema.define(version: 2021_06_15_213248) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,15 @@ ActiveRecord::Schema.define(version: 2021_06_11_230416) do
     t.string "sessiontype"
     t.string "mainchanges"
     t.text "sessionnotes"
+    t.integer "besttoprevs"
+    t.integer "bestbottomrevs"
+    t.integer "secondbestlaptoprevs"
+    t.integer "secondbestlapbottomrevs"
+    t.integer "thirdbesttoprevs"
+    t.integer "thirdbestbottomrevs"
+    t.integer "highestrevs"
+    t.string "engine"
+    t.string "endfuel"
   end
 
 end
