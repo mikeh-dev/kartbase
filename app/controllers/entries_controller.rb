@@ -88,5 +88,6 @@ class EntriesController < ApplicationController
       @entry.fuelload = nil
       @entry.waddingage += 0.1
       @entry.gearoilage += 0.1
+      @entry.tyreage += 13
     end
 end
