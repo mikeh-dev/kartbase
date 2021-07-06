@@ -1,4 +1,12 @@
-<h1>Welcome to KartBase</h1>
-<h3>Store and Analyze Test Data</h3>
+<div class="container" id="main-title">
 
-<%= link_to 'View All Entries', entries_path, class: "btn btn-info" %>
+  <h1>Welcome to KartBase</h1>
+  <h3>Store and Analyze Test Data</h3>
+
+    <div class="row" id="main-button">
+      <%= link_to 'View All Entries', entries_path, class: "btn btn-info m-2" %>
+
+      <%= link_to 'Add New Entry', new_entry_path, class: "btn btn-success m-2" %>
+    </div>
+
+</div>

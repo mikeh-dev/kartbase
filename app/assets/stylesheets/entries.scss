@@ -1,9 +1,5 @@
-// Place all the styles related to the Entries controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
-
 #error_explanation {
-  width: 400px;
+  width:auto;
   border: 2px solid red;
   padding: 7px;
   padding-bottom: 12px;
@@ -18,4 +14,9 @@
 .pagetitle {
   text-align: center;
   padding: 5px;
+}
+
+.field_with_errors input {
+  border: 1px solid red;
+  background-color: rgb(250, 150, 150);
 }

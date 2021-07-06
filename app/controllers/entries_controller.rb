@@ -1,29 +1,26 @@
 class EntriesController < ApplicationController
   before_action :set_entry, only: %i[ show edit update destroy ]
 
-  # GET /entries or /entries.json
   def index
     @entries = Entry.all.order(date: :asc, time: :asc)
   end
 
-  # GET /entries/1 or /entries/1.json
   def show
   end
 
-  # GET /entries/new
+
   def new
     @entry = Entry.new
     @entry = Entry.last.dup
-    new_blanks
+    clear_changing_datapoints
     @entry.time = Time.now.strftime("%k:%M")
     @entry.date = Time.now.strftime("%d/%m/%Y")
   end
 
-  # GET /entries/1/edit
+
   def edit
   end
 
-  # POST /entries or /entries.json
   def create
     @entry = Entry.new(entry_params)
 
@@ -36,7 +33,6 @@ class EntriesController < ApplicationController
       end
   end
 
-  # PATCH/PUT /entries/1 or /entries/1.json
   def update
     respond_to do |format|
       if @entry.update(entry_params)
@@ -49,7 +45,6 @@ class EntriesController < ApplicationController
     end
   end
 
-  # DELETE /entries/1 or /entries/1.json
   def destroy
     @entry.destroy
     respond_to do |format|
@@ -59,24 +54,22 @@ class EntriesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_entry
       @entry = Entry.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def entry_params
       params.require(:entry).permit(:track, :date, :time, :run, :gearing, :prepressure, :postpressure, :rearwidth, :frontwidth, :needleclip, :jet, :bestlap, :secondbestlap, :thirdbestlap, :airmix, :idle, :rimset, :tyre, :tyreset, :camber, :caster, :toe, :frontride, :rearride, :plug, :frontbar, :fuelload, :fuelmix, :condition, :chain, :axle, :endweight, :lapcount, :enginehour, :tyreage, :waddingage, :gearoilage, :sessiontype, :mainchanges, :sessionnotes, :besttoprevs, :bestbottomrevs, :secondbestlaptoprevs, :secondbestlapbottomrevs, :thirdbesttoprevs, :thirdbestbottomrevs, :highestrevs, :engine, :endfuel)
     end
 
-    def new_blanks
+    def clear_changing_datapoints
       @entry.bestlap = nil
       @entry.secondbestlap = nil
       @entry.thirdbestlap = nil
       @entry.run += 1
       @entry.mainchanges = nil
       @entry.sessionnotes = nil
-      @entry.enginehour += 0.1
+      @entry.enginehour += 0.12
       @entry.lapcount = nil
       @entry.besttoprevs = nil
       @entry.secondbestlaptoprevs = nil
