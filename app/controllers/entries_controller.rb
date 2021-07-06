@@ -3,7 +3,7 @@ class EntriesController < ApplicationController
 
   # GET /entries or /entries.json
   def index
-    @entries = Entry.all.order(time: :asc)
+    @entries = Entry.all.order(date: :asc, time: :asc)
   end
 
   # GET /entries/1 or /entries/1.json
