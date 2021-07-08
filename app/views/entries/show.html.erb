@@ -1,29 +1,94 @@
 <h3 class="pagetitle">Session Summary</h3>
 
-<p>
-  <strong>Track:</strong>
-  <%= @entry.track %>
-</p>
+    <div class="row">
+      <div class="col">
+           <strong>Date: </strong>
+            <%= @entry.date.strftime("%d/%m/%Y")   %>
+      </div>
 
-<p>
-  <strong>Date:</strong>
-  <%= @entry.date %>
-</p>
+      <div class="col">
+        <strong>Time: </strong>
+            <%= @entry.time.strftime("%I:%M %p")  %>
+      </div> 
+    </div>
 
-<p>
-  <strong>Run:</strong>
-  <%= @entry.run %>
-</p>
+
+    <div class="row">
+      <div class="col">
+           <strong>Track: </strong>
+            <%= @entry.track %>
+      </div>
+
+
+      <div class="col">
+        <strong>Run:</strong>
+        <%= @entry.run %>
+      </div>
+    </div>
+
+
+<h4 class="mt-4 pagetitle">Lap Times</h4>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Lap</th>
+      <th scope="col">Time</th>
+      <th scope="col">Top Revs</th>
+      <th scope="col">Bottom Revs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td><%= @entry.bestlap %> secs</td>
+      <td><%= @entry.besttoprevs %></td>
+      <td><%= @entry.bestbottomrevs %></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td><%= @entry.secondbestlap %> secs</td>
+      <td><%= @entry.secondbestlaptoprevs %></td>
+      <td><%= @entry.secondbestlapbottomrevs %></td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td><%= @entry.thirdbestlap %> secs </td>
+      <td><%= @entry.thirdbesttoprevs %></td>
+      <td><%= @entry.thirdbestbottomrevs %></td>
+    </tr>
+  </tbody>
+</table>
+
+    <div class="row">
+      <div class="col">
+           <strong>Fuel Load: </strong>
+            <%= @entry.fuelload %> kgs
+      </div>
+
+
+      <div class="col">
+        <strong>End Fuel:</strong>
+        <%= @entry.endfuel %> kgs
+      </div>
+
+      <div class="col">
+        <strong>Fuel Used:</strong>
+        <%= @entry.endfuel %> kgs
+      </div>
+    </div>
+
+
 
 <h3>Engine Setup</h3>
 
 <p>
-  <strong>Needle Clip:</strong>
+  <strong>Carb Clip:</strong>
   <%= @entry.needleclip %>
 </p>
 
 <p>
-  <strong>Main Jet Size:</strong>
+  <strong>Main Jet:</strong>
   <%= @entry.jet %>
 </p>
 
@@ -48,20 +113,6 @@
 </p>
 
 
-<h3>Session Results</h3>
-
-<h5>Top 3 Laps</h5>
-<div class="row">
-  <div class="col">
-    <%= @entry.bestlap %> Seconds
-  </div>
-  <div class="col">
-    <%= @entry.secondbestlap %> Seconds
-  </div>
-  <div class="col">
-    <%= @entry.thirdbestlap %> Seconds
-  </div>
-</div>
 
 
 
