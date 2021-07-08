@@ -60,6 +60,7 @@
   </tbody>
 </table>
 
+<div class="container">
     <div class="row">
       <div class="col">
            <strong>Fuel Load: </strong>
@@ -74,9 +75,29 @@
 
       <div class="col">
         <strong>Fuel Used:</strong>
-        <%= @entry.endfuel %> kgs
+        <%= @entry.fuelload - @entry.endfuel %> kgs
       </div>
     </div>
+
+    <div class="row mt-3">
+      <div class="col">
+           <strong>Pre Pressure: </strong>
+            <%= @entry.prepressure %> psi
+      </div>
+
+
+      <div class="col">
+        <strong>Post Pressure:</strong>
+        <%= @entry.postpressure %> psi
+      </div>
+
+      <div class="col">
+        <strong>Psi Diff:</strong>
+        <%= @entry.postpressure - @entry.prepressure %> psi
+      </div>
+    </div>
+
+  </div>
 
 
 
