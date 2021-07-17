@@ -78,10 +78,11 @@ class EntriesController < ApplicationController
       @entry.secondbestlapbottomrevs = nil
       @entry.thirdbestbottomrevs = nil
       @entry.postpressure = nil
-      @entry.fuelload = nil
+      @entry.fuelload = 0.0
       @entry.waddingage += 0.1
       @entry.gearoilage += 0.1
       @entry.tyreage += 13
       @entry.endweight = nil
+      @entry.endfuel = 0.0
     end
 end
