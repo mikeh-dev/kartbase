@@ -75,11 +75,7 @@
             </div>
             <div class="col">
               <%= form.label :postpressure, "End Psi" %>
-              <%= form.number_field :postpressure, { class: "form-control", placeholder: "Psi"} %>
-            </div>
-            <div class="col">
-              <%= form.label :lapcount, "Laps Done" %>
-              <%= form.number_field :lapcount, { class: "form-control", placeholder: "Laps"} %>
+              <%= form.text_field :postpressure, { class: "form-control", placeholder: "Psi"} %>
             </div>
           </div>
 
@@ -138,7 +134,7 @@
       <div class="row mt-3">
         <div class="col">
           <%= form.label :prepressure, "Pre Psi" %>
-          <%= form.number_field :prepressure, { class: "form-control", placeholder: "Psi"} %>
+          <%= form.text_field :prepressure, { class: "form-control", placeholder: "Psi"} %>
         </div>
 
         
