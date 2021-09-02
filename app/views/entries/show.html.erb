@@ -1,12 +1,12 @@
 <h3 class="pagetitle">Session Summary</h3>
 
     <div class="row">
-      <div class="col">
+      <div class="col d-flex justify-content-center">
            <strong>Date: </strong>
             <%= @entry.date.strftime("%d/%m/%Y")   %>
       </div>
 
-      <div class="col">
+      <div class="col d-flex justify-content-center">
         <strong>Time: </strong>
             <%= @entry.time.strftime("%I:%M %p")  %>
       </div> 
@@ -14,13 +14,13 @@
 
 
     <div class="row">
-      <div class="col">
+      <div class="col d-flex justify-content-center">
            <strong>Track: </strong>
             <%= @entry.track %>
       </div>
 
 
-      <div class="col">
+      <div class="col d-flex justify-content-center">
         <strong>Run:</strong>
         <%= @entry.run %>
       </div>
@@ -62,13 +62,13 @@
 
 <div class="container">
     <div class="row">
-      <div class="col">
+      <div class="col d-flex justify-content-center">
            <strong>Fuel Load: </strong>
             <%= @entry.fuelload %> kgs
       </div>
 
 
-      <div class="col">
+      <div class="col d-flex justify-content-center">
         <strong>End Fuel:</strong>
         <%= @entry.endfuel %> kgs
       </div>
@@ -77,13 +77,13 @@
     </div>
 
     <div class="row mt-3">
-      <div class="col">
+      <div class="col d-flex justify-content-center">
            <strong>Pre Pressure: </strong>
             <%= @entry.prepressure %> psi
       </div>
 
 
-      <div class="col">
+      <div class="col d-flex justify-content-center">
         <strong>Post Pressure:</strong>
         <%= @entry.postpressure %> psi
       </div>
@@ -93,24 +93,40 @@
 
 
 
-<h3>Engine Setup</h3>
+<h3 class="mt-4 pagetitle">Engine Setup</h3>
 
-<p>
-  <strong>Carb Clip:</strong>
-  <%= @entry.needleclip %>
-</p>
+<div class="container">
+    <div class="row">
+      <div class="col d-flex justify-content-center">
+           <strong>Carb Clip: </strong>
+            <%= @entry.needleclip %> kgs
+      </div>
 
-<p>
-  <strong>Main Jet:</strong>
-  <%= @entry.jet %>
-</p>
 
-<p>
-  <strong>Gearing:</strong>
-  <%= @entry.gearing %>
-</p>
+      <div class="col d-flex justify-content-center">
+        <strong>Main Jet</strong>
+        <%= @entry.jet %> kgs
+      </div>
 
-<h3>Chassis Setup</h3>
+    
+    </div>
+
+    <div class="row mt-3">
+      <div class="col d-flex justify-content-center">
+           <strong>Gearing </strong>
+            <%= @entry.gearing %> psi
+      </div>
+
+
+      <div class="col d-flex justify-content-center">
+        <strong>Air Mix</strong>
+        <%= @entry.airmix %> psi
+      </div>
+    </div>
+
+  </div>
+
+<h3 class="mt-4 pagetitle">Chassis Setup</h3>
 <p>
   <strong>Rear Width: </strong>
   <%= @entry.rearwidth %>

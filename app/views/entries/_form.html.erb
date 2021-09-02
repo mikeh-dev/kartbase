@@ -149,7 +149,7 @@
          
           <div class="col">
             <%= form.label :tyre, "Tyre Type" %>
-            <%= form.select :tyre, options_for_select(['Vega White', 'D2XX', 'D5', 'W6 Vega', 'Mojo Wet'], @entry.tyre ),{}, { class: "form-control" } %>         
+            <%= form.select :tyre, options_for_select(['Vega White', 'D2XX', 'D5', 'W6 Vega', 'Mojo Wet', 'W5 Vega', 'D2'], @entry.tyre ),{}, { class: "form-control" } %>         
           </div>
 
           <div class="col">
@@ -251,7 +251,7 @@
         <div class="row mt-3">
           <div class="col">
             <%= form.label :caster, "Caster" %>
-            <%= form.select :caster, options_for_select(['Nuetral', 'Half', 'Full']),{}, { class: "form-control" } %>
+            <%= form.select :caster, options_for_select(['Nuetral', 'Half', 'Full'], @entry.caster ),{}, { class: "form-control" } %>
           </div>
       
 
