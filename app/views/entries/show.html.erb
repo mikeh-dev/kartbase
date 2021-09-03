@@ -2,28 +2,29 @@
 
     <div class="row">
       <div class="col d-flex justify-content-center">
-           <strong>Date: </strong>
+           <strong class="mr-2">Date: </strong>
             <%= @entry.date.strftime("%d/%m/%Y")   %>
       </div>
 
       <div class="col d-flex justify-content-center">
-        <strong>Time: </strong>
+        <strong class="mr-2">Time: </strong>
             <%= @entry.time.strftime("%I:%M %p")  %>
       </div> 
     </div>
 
 
     <div class="row">
-      <div class="col d-flex justify-content-center">
-           <strong>Track: </strong>
+      <div class="col d-flex justify-content-center mt-2">
+           <strong class="mr-2">Track: </strong>
             <%= @entry.track %>
       </div>
 
 
-      <div class="col d-flex justify-content-center">
-        <strong>Run:</strong>
+      <div class="col d-flex justify-content-center mt-2">
+        <strong class="mr-2">Run: </strong>
         <%= @entry.run %>
       </div>
+
     </div>
 
 
@@ -61,32 +62,46 @@
 </table>
 
 <div class="container">
+    <h3 class="mt-2 pagetitle">Tyres</h3>
+
+<div class="container mb-4">
     <div class="row">
       <div class="col d-flex justify-content-center">
-           <strong>Fuel Load: </strong>
-            <%= @entry.fuelload %> kgs
+           <strong class="mr-2">Tyre</strong>
+            <%= @entry.tyre %>
       </div>
-
 
       <div class="col d-flex justify-content-center">
-        <strong>End Fuel:</strong>
-        <%= @entry.endfuel %> kgs
+           <strong class="mr-2">Tyre Set</strong>
+            <%= @entry.tyreset %>
       </div>
 
+      <div class="col d-flex justify-content-center">
+        <strong class="mr-2">Rims</strong>
+        <%= @entry.rimset %>
+      </div>
     
     </div>
 
+  </div>
+
     <div class="row mt-3">
       <div class="col d-flex justify-content-center">
-           <strong>Pre Pressure: </strong>
+           <strong class="mr-2">Pre Pressure </strong>
             <%= @entry.prepressure %> psi
       </div>
 
 
       <div class="col d-flex justify-content-center">
-        <strong>Post Pressure:</strong>
+        <strong class="mr-2">Post Pressure </strong>
         <%= @entry.postpressure %> psi
       </div>
+
+       <div class="col d-flex justify-content-center">
+        <strong class="mr-2">Tyre Age</strong>
+        <%= @entry.tyreage %>
+      </div>
+
     </div>
 
   </div>
@@ -98,55 +113,133 @@
 <div class="container">
     <div class="row">
       <div class="col d-flex justify-content-center">
-           <strong>Carb Clip: </strong>
-            <%= @entry.needleclip %> kgs
+           <strong class="mr-2">Carb Clip</strong>
+            <%= @entry.needleclip %>
       </div>
 
 
       <div class="col d-flex justify-content-center">
-        <strong>Main Jet</strong>
-        <%= @entry.jet %> kgs
+        <strong class="mr-2">Jet</strong>
+        <%= @entry.jet %>
       </div>
 
-    
+       <div class="col d-flex justify-content-center">
+        <strong class="mr-2">Air Mix </strong>
+        <%= @entry.airmix %>
+      </div>
+
+      <div class="col d-flex justify-content-center">
+        <strong class="mr-2">Idle</strong>
+        <%= @entry.idle %>
+      </div>
+
+      <div class="col d-flex justify-content-center">
+        <strong class="mr-2">Plug</strong>
+        <%= @entry.plug %>
+      </div>
+
+
     </div>
 
     <div class="row mt-3">
       <div class="col d-flex justify-content-center">
-           <strong>Gearing </strong>
-            <%= @entry.gearing %> psi
+           <strong class="mr-2">Gearing </strong>
+            <%= @entry.gearing %>
       </div>
-
 
       <div class="col d-flex justify-content-center">
-        <strong>Air Mix</strong>
-        <%= @entry.airmix %> psi
+           <strong class="mr-2">PreFuel </strong>
+            <%= @entry.fuelload %>
       </div>
+
+      <div class="col d-flex justify-content-center">
+           <strong class="mr-2">Post Fuel</strong>
+            <%= @entry.endfuel %>
+      </div>
+
+
+     
     </div>
 
   </div>
 
 <h3 class="mt-4 pagetitle">Chassis Setup</h3>
-<p>
-  <strong>Rear Width: </strong>
-  <%= @entry.rearwidth %>
-  <strong>Front Width: </strong>
-  <%= @entry.frontwidth %>
-</p>
 
-<p>
-  <strong>Pre Session Pressure:</strong>
-  <%= @entry.prepressure %>
-  <strong>Post Session Pressure:</strong>
-  <%= @entry.postpressure %>
-</p>
+<div class="container mb-4">
+    <div class="row">
+      <div class="col d-flex justify-content-center">
+           <strong class="mr-2">Rear Width: </strong>
+            <%= @entry.rearwidth %>
+      </div>
 
 
+      <div class="col d-flex justify-content-center">
+        <strong class="mr-2">Front Width </strong>
+        <%= @entry.frontwidth %>
+      </div>
+
+      <div class="col d-flex justify-content-center">
+        <strong class="mr-2">Axle</strong>
+        <%= @entry.axle %>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col d-flex justify-content-center">
+        <strong class="mr-2">Caster</strong>
+        <%= @entry.caster %>
+      </div>
+      <div class="col d-flex justify-content-center">
+        <strong class="mr-2">Camber</strong>
+        <%= @entry.camber %>
+      </div>
+      <div class="col d-flex justify-content-center">
+        <strong class="mr-2">Toe</strong>
+        <%= @entry.toe %>
+      </div>
+    </div>
+
+     <div class="row mt-3">
+      <div class="col d-flex justify-content-center">
+        <strong class="mr-2">Front Bar</strong>
+        <%= @entry.frontbar %>
+      </div>
+      <div class="col d-flex justify-content-center">
+        <strong class="mr-2">Front Ride</strong>
+        <%= @entry.frontride %>
+      </div>
+      <div class="col d-flex justify-content-center">
+        <strong class="mr-2">Rear Ride</strong>
+        <%= @entry.rearride %>
+      </div>
+    </div>
+
+    <h3 class="mt-4 pagetitle">Counters</h3>
+
+    <div class="row mt-3">
+      <div class="col d-flex justify-content-center">
+        <strong class="mr-2">Wadding Age</strong>
+        <%= @entry.waddingage %>
+      </div>
+      <div class="col d-flex justify-content-center">
+        <strong class="mr-2">Gear Oil</strong>
+        <%= @entry.gearoilage %>
+      </div>
+      <div class="col d-flex justify-content-center">
+        <strong class="mr-2">Engine Hours</strong>
+        <%= @entry.enginehour %>
+      </div>
+    </div>
+
+  </div>
 
 
 
 
 
-<%= link_to 'Edit', edit_entry_path(@entry), class: "btn btn-info" %> |
-<%= link_to 'Back', entries_path, class: "btn btn-primary" %> |
-<%= link_to 'Delete', @entry, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+
+<div class="container d-flex justify-content-center">
+  <%= link_to 'Edit', edit_entry_path(@entry), class: "btn btn-info m-4" %>
+  <%= link_to 'Back', entries_path, class: "btn btn-primary m-4" %>
+  <%= link_to 'Delete', @entry, class: "btn btn-danger m-4", method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
