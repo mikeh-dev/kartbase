@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_04_213718) do
+ActiveRecord::Schema.define(version: 2021_09_03_134529) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "engine", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "engine_entries", id: false, force: :cascade do |t|
+    t.bigint "engine_id", null: false
+    t.bigint "entry_id", null: false
+    t.index ["engine_id"], name: "index_engine_entries_on_engine_id"
+    t.index ["entry_id"], name: "index_engine_entries_on_entry_id"
+  end
 
   create_table "entries", force: :cascade do |t|
     t.string "track"
