@@ -3,7 +3,7 @@
 <div class="row p-3">
     <% @entries.each do |entry| %>
     <div class="col">
-        <div class="card w-33 m-2 style="width: 15rem;"">
+        <div class="card w-33 m-2 index-width">
         <div class="card-body">
           <h5 class="card-title"><%= entry.sessiontype %> </h5>
           <h5 class="card-title">Run <%= entry.run %> on <%= entry.date.strftime("%d/%m/%Y") %> </h5>

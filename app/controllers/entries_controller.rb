@@ -2,7 +2,7 @@ class EntriesController < ApplicationController
   before_action :set_entry, only: %i[ show edit update destroy ]
 
   def index
-    @entries = Entry.all.order(date: :asc, time: :asc)
+    @entries = Entry.all.order(date: :desc, time: :desc)
   end
 
   def show
@@ -10,8 +10,7 @@ class EntriesController < ApplicationController
 
 
   def new
-    @entry = Entry.new
-    @entry = Entry.last.dup
+    @entry = Entry.last
     clear_changing_datapoints
     @entry.time = Time.now.strftime("%k:%M")
     @entry.date = Time.now.strftime("%d/%m/%Y")
@@ -23,7 +22,6 @@ class EntriesController < ApplicationController
 
   def create
     @entry = Entry.new(entry_params)
-
       if @entry.save
         flash.now[:notice] = "Entry Saved!"
         render 'show'
