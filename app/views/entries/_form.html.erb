@@ -136,7 +136,7 @@
 
         <div class="col">
             <%= form.label :rimset, "Rim" %>
-            <%= form.select :rimset, options_for_select(['MXJ 1', 'MXJ 2', 'MXJ 3', 'MXP 1', 'Wet 1', 'Wet 2', 'Wet 3'], @entry.rimset ),{}, { class: "form-control" } %>
+            <%= form.select :rimset, options_for_select(['MXJ 1', 'MXJ 2', 'MXJ 3', 'MXC 1', 'MXC 2', 'Wet 1', 'Wet 2', 'Wet 3'], @entry.rimset ),{}, { class: "form-control" } %>
         </div>
       </div>
 
@@ -186,6 +186,7 @@
           <%= form.label :airmix, "Air Mix" %>
           <%= form.text_field :airmix, { class: "form-control", placeholder: "Number of Turns"} %>
         </div>
+
       </div>
     </div>
 
