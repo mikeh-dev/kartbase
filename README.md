@@ -1,24 +1,11 @@
-# README
+The first Iteration of the KartBase app!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Bootstrap styling (Basic)
 
-Things you may want to cover:
+no Auth
 
-* Ruby version
+Entry model only using basic CRUD and partials.
 
-* System dependencies
+Used in real world for testing
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Started again with Rails 7
